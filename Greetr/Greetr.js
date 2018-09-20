@@ -60,6 +60,10 @@
       this.language = language;
       this.validate();
       return this;
+    },
+    sayHi: function(selector, formal) {
+      $(selector).html(formal ? this.formalgreeting() : this.greeting());
+      return this;
     }
   };
 
@@ -68,6 +72,8 @@
     self.firstName = firstName || "";
     self.lastName = lastName || "";
     self.language = language || supportLangs[0];
+
+    self.validate();
   };
 
   Greetr.init.prototype = Greetr.prototype;
